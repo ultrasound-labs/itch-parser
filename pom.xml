@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>itch-parser</groupId>
+    <artifactId>itch-parser</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>itch-parser</name>
+    
+<dependencies>    
+<dependency>
+    <groupId>amay22</groupId>
+    <artifactId>NASDAQ-ITCH-Parser</artifactId>
+        <version>SNAPSHOT</version>
+        <scope>system</scope>
+    <systemPath>${project.basedir}/src/main/resources/NASDAQ-ITCH-Parser-SNAPSHOT.jar</systemPath>
+</dependency>
+</dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>ParseITCH</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
